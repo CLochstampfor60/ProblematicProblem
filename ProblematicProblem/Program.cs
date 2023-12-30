@@ -14,8 +14,7 @@ namespace ProblematicProblem
             Random rng = new Random();
 
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
-
-            bool cont = (Console.ReadLine().ToLower() == "true" ? true: false);
+            bool cont = (Console.ReadLine().ToLower() == "yes" ? true: false);
 
             Console.WriteLine();
             Console.Write("We are going to need your information first! What is your name? ");
@@ -80,8 +79,8 @@ namespace ProblematicProblem
                     Console.WriteLine("Pick something else!");
                     activities.Remove(randomActivity);
 
-                    /*string randomNumber = rng.Next(activities.Count);
-                    string randomActivity = activities[randomNumber];*/
+                     randomNumber = rng.Next(activities.Count);
+                     randomActivity = activities[randomNumber];
 
                 }
                 Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");

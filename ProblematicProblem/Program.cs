@@ -14,7 +14,9 @@ namespace ProblematicProblem
             Random rng = new Random();
 
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
-            bool cont = bool.Parse(Console.ReadLine());
+
+            bool cont = (Console.ReadLine().ToLower() == "true" ? true: false);
+
             Console.WriteLine();
             Console.Write("We are going to need your information first! What is your name? ");
             string userName = Console.ReadLine();
@@ -23,7 +25,8 @@ namespace ProblematicProblem
             int userAge = int.Parse(Console.ReadLine());
             Console.WriteLine();
             Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
-            bool seeList = bool.Parse(Console.ReadLine());
+            bool seeList = (Console.ReadLine().ToLower() == "sure" ?  true : false);
+
             if (seeList)
             {
                 foreach (string activity in activities)
@@ -33,7 +36,7 @@ namespace ProblematicProblem
                 }
                 Console.WriteLine();
                 Console.Write("Would you like to add any activities before we generate one? yes/no: ");
-                bool addToList = bool.Parse(Console.ReadLine());
+                bool addToList = (Console.ReadLine().ToLower() == "yes" ? true : false);
                 Console.WriteLine();
                 while (addToList)
                 {
